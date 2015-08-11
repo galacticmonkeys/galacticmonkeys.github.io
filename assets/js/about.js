@@ -1,10 +1,11 @@
 $(document).ready(function() {
+  function scroll() {
+    $('html, body').animate({
+      scrollTop: $("#about").offset().top
+      }, 1000);
+  }
+
   $("#about-marker").click(function() {
-    function scroll() {
-      $('html, body').animate({
-        scrollTop: $("#about").offset().top
-        }, 1000);
-    }
     scroll();
   })
 
