@@ -70,38 +70,21 @@ $(document).ready(function() {
   
      // start typing if user near bottom of page
      if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
-        setTimeout(changeText(". Probably.", $("#footer-text"), 750), 3000);
-        clearInterval(Otimer);
+        $("#probably").typed({
+          strings: [". Probably ^1000."],
+          typeSpeed: 200, 
+          startDelay: 3000,
+          backSpeed: 0,
+          loop: false,
+          showCursor: true,
+          cursorChar: "|",
+          attr: null,
+          callback: function() {
+            setTimeout(function(){
+              $(".typed-cursor").css("display", "none");
+            }, 2000);
+          },
+        });
      }
   });
- 
-/* 
-  function typingHelper(text, target, speed) {
-    var arr = text.split("");
-    var random = Math.floor(Math.random() * speed);
-    var i = 0;
-    var typist = function () {
-      for (; i < arr.length; i++) {
-        if (i == 0) return;
-        target.append(arr[i]);
-      }
-    }
-    
-    if (i!=0) setInterval(typist, speed);
-  };
-*/
-
-  function changeText(cont1,cont2,speed){
-    var Otext=cont1;
-    var Ocontent=Otext.split("");
-    var i=0;
-    function show(){
-      if(i<Ocontent.length)
-      {   
-        cont2.append(Ocontent[i]);
-        i=i+1;
-      };
-    };
-      var Otimer=setInterval(show,speed); 
-  };
-})
+ })
