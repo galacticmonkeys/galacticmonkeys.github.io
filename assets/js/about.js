@@ -37,8 +37,8 @@ $(document).ready(function() {
      // start typing if user near bottom of page
      if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
         $("#probably").typed({
-          strings: [". Probably ^1000."],
-          typeSpeed: 200, 
+          strings: [". Probably ^1000. I mean ^1000 it depends on a lot of factors like when the last time I stayed up to 4am because that's the only time I work on these things anyway. So that means like...yesterday. "],
+          typeSpeed: 100, 
           startDelay: 3000,
           backSpeed: 0,
           loop: false,
