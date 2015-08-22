@@ -9,27 +9,33 @@ html {
 
 body {
   font-family: Lato;
+  background: #FFFEF0;
 }
-  
+ 
 .grid {
-  margin: 0 auto,
-  background: #DDD;
+  margin: 0 auto;
+} 
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+.grid-sizer,
+.grid-item {
+  width: 400px;
 }
 
 .grid-item {
-  width: 200px;
-  height: 300px;
-  border: 2px solid hsla(0, 0%, 0%, 0.5);
-  margin: 10px; 
   float: left;
+  margin-bottom: 10px;
 }
 
-.grid-item {
+.grid-item img {
   display: block;
   max-width: 100%;
 }
 
-/* unused */
-.grid-item-2 {
-   width: 400px;
-}

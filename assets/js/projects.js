@@ -1,12 +1,14 @@
-$(document).ready(function() {
+$(document).ready( function() {
+  var $grid = $('.grid').masonry({
+      itemSelector: '.grid-item',
+      isFitWidth: true,
+      columnWidth: '.grid-sizer',
+      gutter: 10
+    }); 
 
-  // init Masonry
-  $('.grid').masonry({
-    //options
-    itemSelector: '.grid-item',
-    columnWidth: 120,
-    isFitWidth: true 
+  // masonry init
+  $('.grid').imagesLoaded(function() {
+    $grid.masonry();  
   });
+});
 
-  
-})
