@@ -15,49 +15,102 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     
     <!--scripts and stylesheets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/projects.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
-    <script src="assets/js/lib/masonry.pkgd.min.js"></script>
-    <script src="assets/js/lib/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/projects.js"></script>
-    <script src="assets/js/lib/prefixfree.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/prefixfree.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/jquery.fancybox.pack.js"></script> 
+    <script type="text/javascript" src="assets/js/projects.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/js/lib/jquery.fancybox.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="assets/css/projects.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
   <h1> Projects </h1> 
-  <h5> Things I've done without aim or purpose </h5> <hr>
+  <h5> Little hacks I do in the dead of night </h5><hr>
   <div class="grid">
     <div class="grid-sizer"></div>
+
     <div class="grid-item">
-      <img src="http://i.imgur.com/bwy74ok.jpg" />
-      some text here
+      <a class="fancybox" href="http://i.imgur.com/bwy74ok.jpg" >
+       <img src="http://i.imgur.com/bwy74ok.jpg" />
+       <div class="link">http://www.google.com</div>
+       <div class="caption">
+         <b>Idea:</b> Tired of those lightbox modals blocking your reading? (Ahem Quora & Pinterest.) Lightbox modals are elegant, but I didn’t like how I was forced to sign up to read a 3 minute article, and I <em>really</em> didn’t like having to reach for the dev tools every time to bypass it. This Chrome extension automates the process, eliminating the lightbox modals with a click so you can keep browsing. <br><br>
+         <b>Challenges or limitations:</b> Lightbox modals are like onions: they are created in layers and they make you cry. The div wrappers are dynamically generated, and the differing pattern of how lightbox modals were built across websites made it hard to find an element to selectively target with consistent results every time. <br><br>
+         <b>Lessons learned:</b> The only thing consistent across all websites was that it looked like a lightbox. Albeit built differently, all lightboxes must come with a certain opacity, z-index, and positioning to look the way they do. An initial way to approach it was setting the “z-index: 0 !important” across the whole body, making everything have the same index. This worked somewhat on Pinterest by putting the modal behind the body (looking slightly disorganized, but effective all the same), but on Quora, it looked absolutely horrible. This would definitely not sell well. Looking at another CSS attribute, all lightboxes had fixed or absolute positioning. So the solution was a recursive function to look for the highest fixed or absolute positioned element in the DOM tree.<br><br>
+         <b>Links: </b> In the Chrome Extension store. Link coming soon. <br><br>
+	  <b>Other comments:</b> A great thanks to PB for teaching me so much. 
+       </div>
+      </a>
     </div>
+
     <div class="grid-item">
-      <img src="http://i.imgur.com/bAZWoqx.jpg" />
-      some other text here
+      <a class="fancybox" href="http://i.imgur.com/bAZWoqx.jpg" >
+       <img src="http://i.imgur.com/bAZWoqx.jpg" />
+       <div class="link">http://www.google.com</div>
+       <div class="caption">
+         <b>Idea:</b> I worked at ClickTime over the summer. Everyday, we had to log on and track time. But loading the whole website took too long. If I was just going to enter 1 time entry, why did I need 50 other modules to load that, as important as they were to managers, had nothing to do with me? Our intern team got together to ease the pain of time tracking by building a Chrome extension using the ClickTime API to circumvent the main app, making a miniature version of ClickTime with only 1 goal: to track time for today. <br><br>
+         <b>Challenges or limitations:</b> One of the features we wanted was a ticking timer. When you pressed start, a badge should show up next to the Chrome Extension icon with the running time of how long you’ve been working for. This caused a great deal of grief. We stored time data by putting it in Chrome storage, creating an Angular service to get and set it. But for some reason, the timer would stop running everytime the chrome extension closed, falling out of sync with Chrome local storage. This shouldn’t make sense because the badge was put in the background script, and by all documentation I had read, the background script should have persisted even when the chrome extension closed. How could you get it to stay in sync? <br><br>
+         <b>Lessons learned:</b> Angular JS is the best thing ever. But don’t ever use JQuery event handlers (‘onclick’) when you already loaded Angular (ng-click) because it just doesn’t make sense to other people reading it. Regarding Chrome extensions in particular, background scripts are the bomb. Content scripts add the icing on the cake. Keep in mind that once you close the Chrome extension popup, all Angular services / directives and other libraries you may be loading stop running as well. Callback functions are best handled with promises. <br><br>
+         <b>Links: </b> The Github link. ClickTime really liked it, and they took it into their own developmental repositories for tweaking. The official version, authored by ClickTime, has a launch date in the Chrome store unknown to me. 
+       </div>
+      </a>
     </div>
+
     <div class="grid-item">
-      <img src="http://i.imgur.com/PgmEBSB.jpg" />
-      text yay
+      <a class="fancybox" href="http://i.imgur.com/PgmEBSB.jpg" >
+       <img src="http://i.imgur.com/PgmEBSB.jpg" />
+       <div class="link">http://www.google.com</div>
+       <div class="caption">
+         <b>Idea:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ant    e dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. <br><br>
+         <b>Challenges or limitations:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ant    e dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet<br><br>
+         <b>Lessons learned:</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. <br><br>
+         <b>Links: </b> asdfasdf
+       </div>
+      </a>
     </div>
+
     <div class="grid-item">
-      <img src="http://i.imgur.com/aboaFoB.jpg" />
+      <a class="fancybox" href="http://i.imgur.com/LkmcILl.jpg" >
+       <img src="http://i.imgur.com/LkmcILl.jpg" />
+       <div class="link">http://www.google.com</div>
+       <div class="caption">
+         <b>Idea:</b> I read Tim Ferriss’ 4-hour workweek. One of the things he mentions is … <br><br>
+         <b>Challenges or limitations:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ant    e dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet<br><br>
+         <b>Lessons learned:</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. <br><br>
+         <b>Links: </b> asdfasdf
+       </div>
+      </a>
     </div>
+
     <div class="grid-item">
-      <img src="http://i.imgur.com/LkmcILl.jpg" />
+      <a class="fancybox" href="http://i.imgur.com/q9zO6tw.jpg" >
+       <img src="http://i.imgur.com/q9zO6tw.jpg" />
+       <div class="link">http://www.google.com</div>
+       <div class="caption">
+         <b>Idea:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ant    e dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. <br><br>
+         <b>Challenges or limitations:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ant    e dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet<br><br>
+         <b>Lessons learned:</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. <br><br>
+         <b>Links: </b> asdfasdf
+       </div>
+      </a>
     </div>
+
     <div class="grid-item">
-      <img src="http://i.imgur.com/q9zO6tw.jpg" />
+      <a class="fancybox" href="http://i.imgur.com/r8p3Xgq.jpg" >
+       <img src="http://i.imgur.com/r8p3Xgq.jpg" />
+       <div class="link">http://www.google.com</div>
+       <div class="caption">
+         <b>Idea:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ant    e dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. <br><br>
+         <b>Challenges or limitations:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ant    e dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet<br><br>
+         <b>Lessons learned:</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. <br><br>
+         <b>Links: </b> asdfasdf
+       </div>
+      </a>
     </div>
-    <div class="grid-item">
-      <img src="http://i.imgur.com/r8p3Xgq.jpg" />
-    </div>
-    <div class="grid-item">
-      <img src="http://i.imgur.com/hODreXI.jpg" />
-    </div>
-    <div class="grid-item">
-      <img src="http://i.imgur.com/UORFJ3w.jpg" />
-    </div>
+
   </div>
 </body>
 </html>
