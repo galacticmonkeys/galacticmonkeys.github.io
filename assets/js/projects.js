@@ -4,7 +4,7 @@ $(document).ready( function() {
       itemSelector: '.grid-item',
       isFitWidth: true,
       columnWidth: '.grid-sizer',
-      gutter: 20 
+      gutter: 30 
     }); 
 
   // masonry init
@@ -16,6 +16,8 @@ $(document).ready( function() {
   $(".fancybox").fancybox();
 
   $(".fancybox").fancybox({
+      minWidth: 400,
+      minHeight: 300,
       beforeLoad: function() {
         this.title = $(this.element).children(".caption")[0].innerHTML;
       },
