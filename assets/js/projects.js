@@ -16,8 +16,6 @@ $(document).ready( function() {
   $(".fancybox").fancybox();
 
   $(".fancybox").fancybox({
-      minWidth: 400,
-      minHeight: 300,
       beforeLoad: function() {
         this.title = $(this.element).children(".caption")[0].innerHTML;
       },
@@ -31,7 +29,8 @@ $(document).ready( function() {
       afterShow: function() {
         var link = $(this.element).children(".link")[0].innerHTML;
         $(".fancybox-image").wrap('<a href="' + link + '" />')
-      },   
+      },
+      scrolling: 'yes'   
   });
 });
 
