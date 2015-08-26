@@ -16,6 +16,7 @@ a {
 /* sidebar stylings */
 .sidebar-container {
 	position: fixed;
+  top: 0px;
 	width: 250px;
 	height: 100%;
 	background-color: black;
