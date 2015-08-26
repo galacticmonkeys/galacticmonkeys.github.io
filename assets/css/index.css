@@ -15,7 +15,7 @@ a {
 
 /* sidebar stylings */
 
-li a {
+.sidebar-container li a {
   color: white;
 }
 
