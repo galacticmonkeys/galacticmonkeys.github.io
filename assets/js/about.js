@@ -17,7 +17,6 @@ $(document).ready(function() {
           //animation complete      
         });
       });
-    
   });
 
   /* scroll watcher for bouncing arrow and typer*/
@@ -33,13 +32,16 @@ $(document).ready(function() {
           //animation complete
         });
     }
-  
-     // start typing if user near bottom of page
-     if($(window).scrollTop() + $(window).height() > $(document).height() - 50) {
+  });
+ 
+   // start typing if hovers over footer 
+    $("footer").on("mouseover", function(){
+        // delete old cursor
+        $("#old-cursor").remove(); 
+        // start typed.js
         $("#probably").typed({
           strings: [". Probably ^1000. I mean ^1000 it depends on a lot of factors like when the last time I stayed up to 4am because that's the only time I work on these things anyway. So that means like...yesterday. "],
           typeSpeed: 100, 
-          startDelay: 3000,
           backSpeed: 0,
           loop: false,
           showCursor: true,
@@ -49,8 +51,7 @@ $(document).ready(function() {
             setTimeout(function(){
               $(".typed-cursor").css("display", "none");
             }, 2000);
-          },
+          }
         });
-     }
-  });
+      })
  })
