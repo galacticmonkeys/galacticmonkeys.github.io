@@ -40,7 +40,7 @@ $(document).ready(function() {
         $("#old-cursor").remove(); 
         // start typed.js
         $("#probably").typed({
-          strings: [". Probably ^1000. I mean ^1000 it depends on a lot of factors like when the last time I stayed up to 4am because that's the only time I work on these things anyway. So that means like...yesterday. "],
+          strings: [". Probably ^1000. I mean ^1000 it depends on a lot of different factors like when was the last time I stayed up to 2am because that's the only time I work on these things anyway. So I guess that means ...yesterday. "],
           typeSpeed: 100, 
           backSpeed: 0,
           loop: false,
@@ -51,6 +51,19 @@ $(document).ready(function() {
             setTimeout(function(){
               $(".typed-cursor").css("display", "none");
             }, 2000);
+            $("#footer-text").text("Last modified:");
+            $("#probably").remove();
+            
+            //start typing again
+            $("#footer-text").typed({
+              strings: ["Probably not yesterday but most likely pretty recently. "]
+              typeSpeed: 100, 
+              backSpeed: 0,
+              loop: false,
+              showCursor: true,
+              cursorChar: "|",
+              attr: null
+            })
           }
         });
       })
