@@ -56,7 +56,7 @@ $(document).ready(function() {
             
             //start typing again
             $("#footer-text").typed({
-              strings: ["Probably not yesterday but most likely pretty recently. "]
+              strings: ["Probably not yesterday but most likely pretty recently. "],
               typeSpeed: 100, 
               backSpeed: 0,
               loop: false,
