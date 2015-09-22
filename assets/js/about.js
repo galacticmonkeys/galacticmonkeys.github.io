@@ -36,11 +36,12 @@ $(document).ready(function() {
  
    // start typing if hovers over footer 
     $("footer").on("mouseover", function(){
-        // delete old cursor
+        // delete placeholder cursor
+        
         $("#old-cursor").remove(); 
         // start typed.js
         $("#probably").typed({
-          strings: [". Probably ^1000. I mean ^1000 it depends on a lot of different factors like when was the last time I stayed up to 2am because that's the only time I work on these things anyway. So I guess that means ...yesterday. "],
+          strings: [". Probably ^1000. I mean ^1000 it depends on a lot of different factors like when was the last time I stayed up to 2am because that's the only time I really work... So I guess that means ...yesterday. "],
           typeSpeed: 100, 
           backSpeed: 0,
           loop: false,
@@ -51,12 +52,11 @@ $(document).ready(function() {
             setTimeout(function(){
               $(".typed-cursor").css("display", "none");
             }, 2000);
-            $("#footer-text").text("Last modified:");
-            $("#probably").remove();
             
             //start typing again
-            $("#footer-text").typed({
-              strings: ["Probably not yesterday but most likely pretty recently. "],
+            $("#footer-text").text("Last modified:");
+            $("#probably").typed({
+              strings: ["Close to yesterday ^1000 ."],
               typeSpeed: 100, 
               backSpeed: 0,
               loop: false,
