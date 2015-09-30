@@ -69,7 +69,6 @@
          <b>Challenges or limitations:</b> Lightbox modals are like onions: they are layered and they make you cry. Each lightbox modal consisted of multiple dynamically generated div wrappers, and it was hard to find a consistent pattern for the way lightboxes were built across websites. How can you find the right div to delete? <br><br>
          <b>Lessons learned:</b> The only thing consistent across all websites was that it looked like a lightbox. Albeit built differently, all lightboxes must come with a certain opacity, z-index, and positioning to look the way they do. An initial way to approach it was setting the “z-index: 0 !important” across the whole body, making everything have the same index. This worked somewhat on Pinterest by putting the modal behind the body (looking utterly janky, but effective all the same), but on Quora, it looked absolutely horrible. Looking at another CSS attribute, all lightboxes had fixed or absolute positioning. Looking for the highest fixed or absolute positioned element in the DOM tree seems to work well. <br><br>
          <b>Links: </b> https://chrome.google.com/webstore/detail/eludim/iopbidgaohgcggflegchfplfbjinjjjn?hl=en-US <br><br>
-	  <b>Other comments:</b> A great thanks to PB for teaching me so much. 
        </div>
       </a>
     </div>
