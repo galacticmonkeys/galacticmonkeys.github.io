@@ -1,6 +1,5 @@
 $(document).ready(function() {
-
-  /* writes emails backwards to avoid spammers. */
+  /* writes emails backwards to avoid spammers. Does this actually work? idk */
   function printEmail() {
     var reversed = "ude.yelekreb@nauy.y";
     var link = "";
@@ -13,6 +12,4 @@ $(document).ready(function() {
   }
 
   $("#emailimg").wrap(printEmail());
-
 })
-

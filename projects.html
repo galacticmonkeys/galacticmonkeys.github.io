@@ -16,152 +16,65 @@
     
     <!--scripts and stylesheets -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
-    <script type="text/javascript" src="assets/js/lib/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lib/imagesloaded.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lib/prefixfree.min.js"></script>
-    <script type="text/javascript" src="assets/js/lib/jquery.fancybox.pack.js"></script> 
-    <script type="text/javascript" src="assets/js/projects.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/js/lib/jquery.fancybox.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/projects.css">
     <script type="text/javascript" src="assets/js/menu.js"></script>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-   <div id = "sidebar">
-        <!-- Hamburger Icon -->
-      <div id = "sidebar-button">
-          <a id="nav-toggle">
-              <span></span>
-          </a>
-      </div>
- 	<!-- Sidebar -->
-            <nav class = "sidebar-container">
-                <ul>
-                    <li>
-                      <a id="about-marker" href="index.html#about">About</a>
-                    </li>
+  <div id = "sidebar">
+    <!-- Hamburger Icon -->
+  	<div id = "sidebar-button">
+    	<a id="nav-toggle">
+        <span></span>
+    	</a>
+  	</div>
 
-                        <li>
-                          <a href = "https://pacific-crag-1205.herokuapp.com/">Blog</a>
-                        </li>
-                    
-                      <li> 
-                         <a href = "projects.html">Projects</a>
-                      </li>
-                        <li>
-                          <a href = "contact.html">Contact</a>
-                        </li>
-                </ul>
-            </nav>
-  </div> <h1> Projects </h1> 
-  <h5> Little hacks I do in the dead of night </h5>
-  <div class="grid">
-    <div class="grid-sizer"></div>
+    <!-- Sidebar -->
+    <nav class = "sidebar-container">
+      <ul>
+        <li><a id="about-marker" href="index.html">About</a></li>
+        <li><a href="https://pacific-crag-1205.herokuapp.com/">Blog</a></li>  
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
-    <div class="grid-item">
-      <a class="fancybox" href="assets/img/projimg/eludim.png" >
-       <img src="assets/img/projimg/eludim.png" />
-       <div class="link">https://chrome.google.com/webstore/detail/eludim/iopbidgaohgcggflegchfplfbjinjjjn?hl=en-US</div>
-       <div class="caption">
-         <b>Idea:</b> Tired of those lightbox modals blocking your reading? (Ahem Quora & Pinterest.) Lightbox modals are elegant, but I didn&#8217;t like how I was forced to sign up to read them, and I <em>really</em> didn&#8217;t like having to reach for the dev tools, find the right node, and delete it every single time. This Chrome extension automates the process, eliminating the lightbox modals with a click so you can keep browsing. <br><br>
-         <b>Challenges or limitations:</b> Lightbox modals are like onions: they are layered and they make you cry. Each lightbox modal consisted of multiple dynamically generated div wrappers, and it was hard to find a consistent pattern for the way lightboxes were built across websites. How can you find the right div to delete? <br><br>
-         <b>Lessons learned:</b> The only thing consistent across all websites was that it looked like a lightbox. Albeit built differently, all lightboxes must come with a certain opacity, z-index, and positioning to look the way they do. An initial way to approach it was setting the “z-index: 0 !important” across the whole body, making everything have the same index. This worked somewhat on Pinterest by putting the modal behind the body (looking utterly janky, but effective all the same), but on Quora, it looked absolutely horrible. Looking at another CSS attribute, all lightboxes had fixed or absolute positioning. Looking for the highest fixed or absolute positioned element in the DOM tree seems to work well. <br><br>
-         <b>Links: </b> https://chrome.google.com/webstore/detail/eludim/iopbidgaohgcggflegchfplfbjinjjjn?hl=en-US <br><br>
-       </div>
-      </a>
-    </div>
+  <div class='body-wrapper'>
+  	<div class='text-wrapper'>
+	  	<div class='title'>
+			  <h1>Projects </h1> 
+			  <h4>Weekend Warrior endeavors</h4>
+			</div>
+			<br>
+		  <h4>Projects</h4>
+			<ul>
+				<li><a href="http://github.com/clicktime/ClickTimeExtension">ClickTime for Chrome</a> (designed for <a href="http://www.clicktime.com">ClickTime</a>; in Beta release)</li>
+				<li><a href="http://yuan-yuan.me/Eludim">Eludim</a> (simple Chrome extension to delete signup/login boxes on web content)</li>
+			</ul>
 
-    <div class="grid-item">
-      <a class="fancybox" href="assets/img/projimg/clicktime.png" >
-       <img src="assets/img/projimg/clicktime.png" />
-       <div class="link">https://github.com/clicktime/ClickTimeExtension</div>
-       <div class="caption">
-         <b>Idea:</b> I worked at ClickTime over the summer. Everyday, we had to log on and track time. But loading the whole website, with its hundreds of different modules and options that would be useful to managers but not to the average person trying to enter time for one day took too long and just didn&#8217;t make sense.  Our intern team got together to ease the pain of time tracking by building a Chrome extension using the ClickTime API to circumvent the main app, making a miniature version of ClickTime with only 1 goal: to track time for today. In the end, we reduced time tracking to 1/3 of the original time.  <br><br>
-         <b>Challenges or limitations:</b> One of the features we wanted was a dynamic timer visible on the icon in the chrome extension tray. When you pressed start, a running stopwatch of how long you&#8217;ve been working for should show up. This caused a great deal of grief. We stored time data by putting it in Chrome storage, creating an Angular service to get and set it. But timer would stop running every time the chrome extension closed, falling out of sync with Chrome local storage, because the Angular service stops running once the extension main page is closed. <br>
-Another thing that caused a lot of headache was the user permissions for time entry methods. We retrieved the permission from the API, and then used the data to set the page view. But what if the administrator switched the time entry method? There needed to be a forced API call to refresh somewhere. But where? Too many calls, and you slow down the loading. Too little calls, you risk stale data. We had to balance performance with invalid time entries. <br><br>
-         <b>Lessons learned:</b> You can register services in background scripts as well, so registering the service as a background script would work. But it had too many other dependencies, and it didn&#8217;t make sense to register 5 files for one function. So, against all rules of DRY, I repeated myself and copied and pasted the one function that I needed. Best solution? Maybe not. But best solution given the constraints of the situation? Definitely. Sometimes, the best solution involves violating a principle. <br>
-Also, callback functions are best handled with promises. <br><br>
-         <b>Links: </b> Here is the version on GitHub. ClickTime really liked it, and they took it into their own developmental repositories for tweaking. The official version, authored by ClickTime, has a launch date in the Chrome store unknown to me. 
-       </div>
-      </a>
-    </div>
+		  <h4>Websites</h4>
+			<ul>
+				<li><a href="http://yuan-yuan.me/The-Potato">The Potato</a> (100% legit)</li>
+				<li><a href="http://ses.berkeley.edu">Society of Engineering Sciences</a> (before redesign: <a href="http://yuan-yuan.me/ses)">yuan-yuan.me/ses</a>  )</li>
+				<li><a href="http://snap.berkeley.edu/run">Snap</a> (responsible for the graphics portion)</li>
+				<li><a href="http://hackjam.io">HackJam</a> (try typing 'emu' !)</li>
+				<li><a href="http://yuan-yuan.me/which-class/">Which cs class should I take? </a> (the fun is in the <a href="http://yuan-yuan.me/which-class/survey.html">survey</a>!)</li>
+			</ul>
 
-    <div class="grid-item">
-      <a class="fancybox" href="assets/img/projimg/snap.png" >
-       <img src="assets/img/projimg/snap.png" />
-       <div class="link">http://snap.berkeley.edu/snapsource/snap.html</div>
-       <div class="caption">
-         <b>Idea:</b> New feature for Snap! that manipulates costume appearance <br><br>
-         <b>Challenges or limitations:</b> Jumping into and working with an existing project. <br><br>
-         <b>Lessons learned:</b> This was my first open source contribution, and as such, the first time I contributed instead of creating. It was hard to read and understand other people&#8217;s ideas, but this project was so wortwhile because of this. Software is much more about working with what already exists rather than creating something from scratch, so this was an important skill to learn.<br><br>
-         <b>Links: </b> http://snap.berkeley.edu/snapsource/snap.html
-       </div>
-      </a>
-    </div>
+			<h4>Just for fun </h4>
+			<ul>
+				<li><a href="http://gist.github.com/galacticmonkeys/9b2b8147673148ae4102">Slack Annoy</a> (trigger the typing indicator on Slack to annoy office workers)</li>
+			</ul>
 
-    <div class="grid-item">
-      <a class="fancybox" href="assets/img/projimg/the-potato.png" >
-       <img src="assets/img/projimg/the-potato.png" />
-       <div class="link">http://galacticmonkeys.github.io/The-Potato/</div>
-       <div class="caption">
-         <b>Idea:</b> A parody of startup websites all espousing the same idea, with the same buzzwords. After the funding of the Yo app, it was hard to put a limit on what couldn&#8217;t be considered a startup. Can I sell you a potato? <br><br>
-         <b>Challenges or limitations:</b> This was also an exercise in learning jQuery. It progressed very smoothly. But as always, optimizing for different browsers and screen sizes is tedious, and that was something I didn&#8217;t bother to do. <br><br>
-         <b>Lessons learned:</b> jQuery is more and more so becoming a web standard. On modern websites, it&#8217;s hard to find any sort of DOM manipulation without jQuery. <br><br>
-         <b>Links: </b> http://galacticmonkeys.github.io/The-Potato/
-       </div>
-      </a>
-    </div>
-
-    <div class="grid-item">
-      <a class="fancybox" href="assets/img/projimg/which-class.png" >
-       <img src="assets/img/projimg/which-class.png" />
-       <div class="link">http://galacticmonkeys.github.io/which-class/</div>
-       <div class="caption">
-         <b>Idea:</b> There are 3 introductory CS courses at Cal, and as such, it causes a great deal of confusion for students to figure out which course they should take. A bunch of students collaborated on a Google Doc to provide advice on which class to choose. I pointed out that no one would scroll through 9 pages of information presented in such a shoddy manner. So this is a website wrapper for all that information. <br><br>
-         <b>Challenges or limitations:</b> I utilized impress.js, which handles a prezi-like movement for a quiz to tell a student which class they should take. The formatting was all going to be the same for every question, so I decided to template it. But this provided difficulty because of some unique formatting and positioning issues on some particular questions. <br><br>
-         <b>Lessons learned:</b> This project was more frustrating than insightful. The styling is all handled with libraries. There wasn&#8217;t anything I discovered or was enlightening. The true lesson is that some projects are like that. Was it worth my time, even though I didn’t learn anything? I would say yes. I learned the in and outs of some libraries, if anything, and if it helped some people, then it’s worth it. <br><br>
-         <b>Links: </b> http://galacticmonkeys.github.io/which-class/
-       </div>
-      </a>
-    </div>
-
-    <div class="grid-item">
-      <a class="fancybox" href="assets/img/projimg/slack.png" >
-       <img src="assets/img/projimg/slack.png" />
-       <div class="link">https://gist.github.com/galacticmonkeys/9b2b8147673148ae4102</div>
-       <div class="caption">
-         <b>Idea:</b> Simulate the typing effect to trigger the typing indicator to annoy office workers. <br><br>
-         <b>Challenges or limitations:</b> Figuring out the events that triggered the typing notification. <br><br>
-         <b>Lessons learned:</b> I didn&#8217;t realize so much went into typing: mouseover, mousedown, click, mouseup, type. All of these events had to be triggered to kick the typing notification. Web technologies are incredible. That&#8217;s all. <br><br>
-	 <b>Links:</b> https://gist.github.com/galacticmonkeys/9b2b8147673148ae4102
-       </div>
-      </a>
-    </div>
-
-    <div class="grid-item">
-      <a class="fancybox" href="assets/img/projimg/bash.png" >
-       <img src="assets/img/projimg/bash.png" />
-       <div class="link">https://gist.github.com/galacticmonkeys/2402f11afb5dbd227166</div>
-       <div class="caption">
-         <b>Idea:</b> Speed up grading by automating folder traversal and file editing. <br><br>
-         <b>Challenges or limitations:</b> Bash isn&#8217;t too different from anything else. But figuring out how to use sed to properly do a very specific thing was hard. <br><br>
-         <b>Lessons learned:</b> The process of Googling: 
-	   <ol>
-	     <li>What is the problem I am running in to?</li>
-	     <li>In what context might someone else also be encountering the same problem?</li>
-	     <li>How is it possible that I am the only person in the world running into this problem?</li>
-  	     <li>Finally! A relevant StackOverflow post!</li>
-	     <li>0 answers???</li>
-	     <li>Consult documentation. </li>
-   	   </ol>
-  	  <b>Links:</b> https://gist.github.com/galacticmonkeys/2402f11afb5dbd227166
-    	<br><br>
-       </div>
-      </a>
-    </div>
- </div>
+			<h4>Half-baked</h4>
+			<ul>
+				<li><a href="https://github.com/HammadB/Drumble">Drumble</a> (uses camera to capture user guestures to play air drums)</li>
+				<li><a href="https://github.com/talbenari1/treehacks-2016">Trottr</a> (travel app that allows you to share routes)</li>
+			</ul>
+		</div>
+	</div>
 </body>
 </html>
 

@@ -41,7 +41,7 @@ $(document).ready(function() {
         $("#old-cursor").remove(); 
         // start typed.js
         $("#probably").typed({
-          strings: [". Probably ^1000. I mean ^1000 it depends on a lot of different factors like when was the last time I stayed up to 2am because that's the only time I really work... So I guess that means ...yesterday. "],
+          strings: [". Probably ^1000."],
           typeSpeed: 100, 
           backSpeed: 0,
           loop: false,
