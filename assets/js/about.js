@@ -37,11 +37,11 @@ $(document).ready(function() {
    // start typing if hovers over footer 
     $("footer").on("mouseover", function(){
         // delete placeholder cursor
-        
         $("#old-cursor").remove(); 
+        
         // start typed.js
         $("#probably").typed({
-          strings: [". Probably ^1000."],
+          strings: [". Probably ^1000 :P"],
           typeSpeed: 100, 
           backSpeed: 0,
           loop: false,
@@ -52,18 +52,6 @@ $(document).ready(function() {
             setTimeout(function(){
               $(".typed-cursor").css("display", "none");
             }, 2000);
-            
-            //start typing again
-            $("#footer-text").text("Last modified:");
-            $("#probably").typed({
-              strings: ["Close to yesterday ^1000 ."],
-              typeSpeed: 100, 
-              backSpeed: 0,
-              loop: false,
-              showCursor: true,
-              cursorChar: "|",
-              attr: null
-            })
           }
         });
       })
