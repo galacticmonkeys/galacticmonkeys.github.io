@@ -26,7 +26,6 @@ $(document).ready(function() {
         $('.bounce').fadeIn("slow", function() {
             //animation complete
         });
-        $("#footer-text").text("Last modified: A long time ago");
     } else {
         $(".bounce").fadeOut("slow", function() {
           //animation complete
@@ -41,7 +40,7 @@ $(document).ready(function() {
         
         // start typed.js
         $("#probably").typed({
-          strings: [". Probably ^1000 :P"],
+          strings: [". I think. ^1000 Probably ^1000 ."],
           typeSpeed: 100, 
           backSpeed: 0,
           loop: false,
