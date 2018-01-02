@@ -40,7 +40,7 @@ $(document).ready(function() {
         
         // start typed.js
         $("#probably").typed({
-          strings: [". I think. ^1000 Probably ^1000 ."],
+          strings: [". Probably ^1000 ."],
           typeSpeed: 100, 
           backSpeed: 0,
           loop: false,
